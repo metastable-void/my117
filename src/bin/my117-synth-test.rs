@@ -7,7 +7,7 @@ use my117::voice::Synthesizable;
 const WAV_FMT_SUBCHUNK_SIZE: u32 = 16;
 const WAV_FORMAT_PCM: u16 = 1;
 const WAV_BITS_PER_SAMPLE: u16 = 16;
-const WAV_SAMPLE_RATE: u32 = 48000;
+const WAV_SAMPLE_RATE: u32 = 8000;
 const WAV_CHANNELS: u16 = 1;
 
 fn main() {
