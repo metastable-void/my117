@@ -1,54 +1,54 @@
 //! Voice data in PCM s16le format.
 //! Also contains utility functions to synthesize PCM data from parts.
 
-pub static VOICE_GOZEN: &'static [u8] = include_bytes!("../voices/gozen.s16le");
-pub static VOICE_GOGO: &'static [u8] = include_bytes!("../voices/gogo.s16le");
-pub static VOICE_SHOGOWO: &'static [u8] = include_bytes!("../voices/shogowo.s16le");
+static VOICE_GOZEN: &'static [u8] = include_bytes!("../voices/gozen.s16le");
+static VOICE_GOGO: &'static [u8] = include_bytes!("../voices/gogo.s16le");
+static VOICE_SHOGOWO: &'static [u8] = include_bytes!("../voices/shogowo.s16le");
 
-pub static VOICE_0JI: &'static [u8] = include_bytes!("../voices/0ji.s16le");
-pub static VOICE_1JI: &'static [u8] = include_bytes!("../voices/1ji.s16le");
-pub static VOICE_2JI: &'static [u8] = include_bytes!("../voices/2ji.s16le");
-pub static VOICE_3JI: &'static [u8] = include_bytes!("../voices/3ji.s16le");
-pub static VOICE_4JI: &'static [u8] = include_bytes!("../voices/4ji.s16le");
-pub static VOICE_5JI: &'static [u8] = include_bytes!("../voices/5ji.s16le");
-pub static VOICE_6JI: &'static [u8] = include_bytes!("../voices/6ji.s16le");
-pub static VOICE_7JI: &'static [u8] = include_bytes!("../voices/7ji.s16le");
-pub static VOICE_8JI: &'static [u8] = include_bytes!("../voices/8ji.s16le");
-pub static VOICE_9JI: &'static [u8] = include_bytes!("../voices/9ji.s16le");
-pub static VOICE_10JI: &'static [u8] = include_bytes!("../voices/10ji.s16le");
-pub static VOICE_11JI: &'static [u8] = include_bytes!("../voices/11ji.s16le");
+static VOICE_0JI: &'static [u8] = include_bytes!("../voices/0ji.s16le");
+static VOICE_1JI: &'static [u8] = include_bytes!("../voices/1ji.s16le");
+static VOICE_2JI: &'static [u8] = include_bytes!("../voices/2ji.s16le");
+static VOICE_3JI: &'static [u8] = include_bytes!("../voices/3ji.s16le");
+static VOICE_4JI: &'static [u8] = include_bytes!("../voices/4ji.s16le");
+static VOICE_5JI: &'static [u8] = include_bytes!("../voices/5ji.s16le");
+static VOICE_6JI: &'static [u8] = include_bytes!("../voices/6ji.s16le");
+static VOICE_7JI: &'static [u8] = include_bytes!("../voices/7ji.s16le");
+static VOICE_8JI: &'static [u8] = include_bytes!("../voices/8ji.s16le");
+static VOICE_9JI: &'static [u8] = include_bytes!("../voices/9ji.s16le");
+static VOICE_10JI: &'static [u8] = include_bytes!("../voices/10ji.s16le");
+static VOICE_11JI: &'static [u8] = include_bytes!("../voices/11ji.s16le");
 
-pub static VOICE_10: &'static [u8] = include_bytes!("../voices/10.s16le");
-pub static VOICE_20: &'static [u8] = include_bytes!("../voices/20.s16le");
-pub static VOICE_30: &'static [u8] = include_bytes!("../voices/30.s16le");
-pub static VOICE_40: &'static [u8] = include_bytes!("../voices/40.s16le");
-pub static VOICE_50: &'static [u8] = include_bytes!("../voices/50.s16le");
+static VOICE_10: &'static [u8] = include_bytes!("../voices/10.s16le");
+static VOICE_20: &'static [u8] = include_bytes!("../voices/20.s16le");
+static VOICE_30: &'static [u8] = include_bytes!("../voices/30.s16le");
+static VOICE_40: &'static [u8] = include_bytes!("../voices/40.s16le");
+static VOICE_50: &'static [u8] = include_bytes!("../voices/50.s16le");
 
-pub static VOICE_1FUN: &'static [u8] = include_bytes!("../voices/1fun.s16le");
-pub static VOICE_2FUN: &'static [u8] = include_bytes!("../voices/2fun.s16le");
-pub static VOICE_3FUN: &'static [u8] = include_bytes!("../voices/3fun.s16le");
-pub static VOICE_4FUN: &'static [u8] = include_bytes!("../voices/4fun.s16le");
-pub static VOICE_5FUN: &'static [u8] = include_bytes!("../voices/5fun.s16le");
-pub static VOICE_6FUN: &'static [u8] = include_bytes!("../voices/6fun.s16le");
-pub static VOICE_7FUN: &'static [u8] = include_bytes!("../voices/7fun.s16le");
-pub static VOICE_8FUN: &'static [u8] = include_bytes!("../voices/8fun.s16le");
-pub static VOICE_9FUN: &'static [u8] = include_bytes!("../voices/9fun.s16le");
+static VOICE_1FUN: &'static [u8] = include_bytes!("../voices/1fun.s16le");
+static VOICE_2FUN: &'static [u8] = include_bytes!("../voices/2fun.s16le");
+static VOICE_3FUN: &'static [u8] = include_bytes!("../voices/3fun.s16le");
+static VOICE_4FUN: &'static [u8] = include_bytes!("../voices/4fun.s16le");
+static VOICE_5FUN: &'static [u8] = include_bytes!("../voices/5fun.s16le");
+static VOICE_6FUN: &'static [u8] = include_bytes!("../voices/6fun.s16le");
+static VOICE_7FUN: &'static [u8] = include_bytes!("../voices/7fun.s16le");
+static VOICE_8FUN: &'static [u8] = include_bytes!("../voices/8fun.s16le");
+static VOICE_9FUN: &'static [u8] = include_bytes!("../voices/9fun.s16le");
 
-pub static VOICE_10FUN: &'static [u8] = include_bytes!("../voices/10fun.s16le");
-pub static VOICE_20FUN: &'static [u8] = include_bytes!("../voices/20fun.s16le");
-pub static VOICE_30FUN: &'static [u8] = include_bytes!("../voices/30fun.s16le");
-pub static VOICE_40FUN: &'static [u8] = include_bytes!("../voices/40fun.s16le");
-pub static VOICE_50FUN: &'static [u8] = include_bytes!("../voices/50fun.s16le");
+static VOICE_10FUN: &'static [u8] = include_bytes!("../voices/10fun.s16le");
+static VOICE_20FUN: &'static [u8] = include_bytes!("../voices/20fun.s16le");
+static VOICE_30FUN: &'static [u8] = include_bytes!("../voices/30fun.s16le");
+static VOICE_40FUN: &'static [u8] = include_bytes!("../voices/40fun.s16le");
+static VOICE_50FUN: &'static [u8] = include_bytes!("../voices/50fun.s16le");
 
-pub static VOICE_CHODO_WO: &'static [u8] = include_bytes!("../voices/chodo-wo.s16le");
+static VOICE_CHODO_WO: &'static [u8] = include_bytes!("../voices/chodo-wo.s16le");
 
-pub static VOICE_10BYO_WO: &'static [u8] = include_bytes!("../voices/10byo-wo.s16le");
-pub static VOICE_20BYO_WO: &'static [u8] = include_bytes!("../voices/20byo-wo.s16le");
-pub static VOICE_30BYO_WO: &'static [u8] = include_bytes!("../voices/30byo-wo.s16le");
-pub static VOICE_40BYO_WO: &'static [u8] = include_bytes!("../voices/40byo-wo.s16le");
-pub static VOICE_50BYO_WO: &'static [u8] = include_bytes!("../voices/50byo-wo.s16le");
+static VOICE_10BYO_WO: &'static [u8] = include_bytes!("../voices/10byo-wo.s16le");
+static VOICE_20BYO_WO: &'static [u8] = include_bytes!("../voices/20byo-wo.s16le");
+static VOICE_30BYO_WO: &'static [u8] = include_bytes!("../voices/30byo-wo.s16le");
+static VOICE_40BYO_WO: &'static [u8] = include_bytes!("../voices/40byo-wo.s16le");
+static VOICE_50BYO_WO: &'static [u8] = include_bytes!("../voices/50byo-wo.s16le");
 
-pub static VOICE_OSHIRASESHIMASU: &'static [u8] = include_bytes!("../voices/oshiraseshimasu.s16le");
+static VOICE_OSHIRASESHIMASU: &'static [u8] = include_bytes!("../voices/oshiraseshimasu.s16le");
 
 #[derive(Debug, Clone, Copy)]
 pub enum Part {

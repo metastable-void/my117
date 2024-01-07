@@ -51,6 +51,14 @@ impl Time {
         }
     }
 
+    pub fn from_local(local: DateTime<Local>) -> Time {
+        Time {
+            hour: local.hour() as u8,
+            minute: local.minute() as u8,
+            second: local.second() as u8,
+        }
+    }
+
     pub fn hour(&self) -> u8 {
         self.hour
     }
@@ -65,11 +73,7 @@ impl Time {
 
     fn second_round_up_to_10_second(&self) -> u8 {
         let second = self.second;
-        if second % 10 == 0 {
-            second
-        } else {
-            second + 10 - second % 10
-        }
+        second + 10 - second % 10
     }
 
     fn minute_round_up_to_10_second(&self) -> u8 {
@@ -185,7 +189,13 @@ impl Time {
         }
 
         result.push(Part::VoiceOshiraseshimasu);
-        
+
         result
+    }
+}
+
+impl From<DateTime<Local>> for Time {
+    fn from(local: DateTime<Local>) -> Time {
+        Time::from_local(local)
     }
 }
