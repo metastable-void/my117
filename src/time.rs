@@ -104,7 +104,7 @@ impl Time {
     pub fn get_next_voice_parts(&self) -> Vec<Part> {
         let (hour, minute, second) = self.tuple_round_up_to_10_second();
         let mut result = Vec::new();
-        if hour == 0 && minute == 0 && second == 0 {
+        if hour == 12 && minute == 0 && second == 0 {
             result.push(Part::VoiceShogoWo);
             result.push(Part::VoiceOshiraseshimasu);
             return result;
