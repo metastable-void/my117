@@ -3,6 +3,12 @@ name = "my117"
 version = "0.1.0"
 edition = "2021"
 
+license = "Apache-2.0 OR MPL-2.0"
+readme = "README.md"
+repository = "https://github.com/metastable-void/my117"
+description = "Japanese telephony speaking clock for Asterisk (or any applications supporing G.711 mu-law)."
+homepage = "https://github.com/metastable-void/my117"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
